@@ -74,8 +74,8 @@ class MyApp extends StatelessWidget {
 
   buildDurumIconu(int puani) {
     if (puani >= 50) return Icon(Icons.done);
-        else if (puani<50) return Icon(Icons.square);
-        else return Icon(Icons.clear);
+    else if (puani<50) return Icon(Icons.square);
+    else return Icon(Icons.clear);
   }
 
 }
