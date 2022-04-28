@@ -6,13 +6,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  String uygulamaAdi = "erdincdonmez";
+  String uygulamaAdi = "Öğrenci Takip Sistemi";
   int not = 60;
   @override
   Widget build(BuildContext context) {
     var ogrenciler = ["Erdinç","Erhan","Ensar"];
     //var ogrenciler1 = new List<Ogrenci>();
-    List <Ogrenci> ogrenciler1 = [Ogrenci("Erdinç", "Dönmez", 438,100),Ogrenci("Erhan", "Yıldız", 338,50),Ogrenci("Esma", "Zinde", 238,40),];
+    List <Ogrenci> ogrenciler1 = [
+      Ogrenci("Erdinç", "Dönmez", 438,100,"https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166__340.jpg"),
+      Ogrenci("Erhan", "Yıldız", 338,50,"https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445__340.jpg"),
+      Ogrenci("Esma", "Zinde", 238,40,""),];
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -28,12 +31,17 @@ class MyApp extends StatelessWidget {
                   //return Text(ogrenciler1[index].soyAdi);
                   return ListTile(
                     leading: CircleAvatar(
-                      backgroundImage: NetworkImage("https://media.istockphoto.com/photos/portrait-of-young-smiling-woman-face-partially-covered-with-flying-picture-id1297159365?k=20&m=1297159365&s=612x612&w=0&h=RHC5Qy40yAgwmpZVj0vXKUzcUm6qrY2MSSWzj2nLQlg="),
+                      backgroundImage: NetworkImage(ogrenciler1[index].resmi),
                     ),
                     title: Text(ogrenciler1[index].adi+" "+ogrenciler1[index].soyAdi),
                     subtitle: Text("Öğrenci puanı: "+ogrenciler1[index].puani.toString()),
                     //trailing: Icon(Icons.done),
                     trailing: buildDurumIconu(ogrenciler1[index].puani),
+                    onTap: (){
+                      var mesaj = ogrenciler1[index].adi +" "+ ogrenciler1[index].soyAdi+" notu : "+ogrenciler1[index].puani.toString();
+                      mesajGoster(context, mesaj);
+                      print(ogrenciler1[index].adi +" "+ ogrenciler1[index].soyAdi+" notu : "+ogrenciler1[index].puani.toString());
+                    },
                   );
                 }
             ),

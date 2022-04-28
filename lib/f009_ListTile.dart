@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var ogrenciler = ["Erdinç","Erhan","Ensar"];
     //var ogrenciler1 = new List<Ogrenci>();
-    List <Ogrenci> ogrenciler1 = [Ogrenci("Erdinç", "Dönmez", 438,100),Ogrenci("Erhan", "Yıldız", 338,50),];
+    List <Ogrenci> ogrenciler1 = [Ogrenci("Erdinç", "Dönmez", 438,100,""),Ogrenci("Erhan", "Yıldız", 338,50,""),];
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
